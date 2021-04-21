@@ -9,7 +9,7 @@ use Illuminate\Auth\AuthenticationException;
 
 class LoginController extends Controller
 {
-    public function __constructor()
+    public function __contructor()
     {
         //no requiere autenticación
         $this->middleware(['guest']);

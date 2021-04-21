@@ -10,8 +10,9 @@ use App\Http\Requests\Auth\RegisterRequest;
 class RegisterController extends Controller
 {
 
-    public function __constructor()
+    public function __contructor()
     {
+        
         //no requiere autenticación
         $this->middleware(['guest']);
     }
