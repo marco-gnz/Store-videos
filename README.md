@@ -1,9 +1,9 @@
 # Backend - Store Videos
 
-## Deploy in server
+## Deploy in server 
 
 1. Tener instalado Docker
-2. Si requiere hacer una configuración de dependencia debes editar el Dockerfile
+2. Si requiere hacer una configuración de dependencia debes editar el Dockerfile (Actualmente esta montado con Nginx)
 
 ### En contenedor de la app
 1. Ejecutar composer install
