@@ -23,4 +23,5 @@ Route::post('/login',       [App\Http\Controllers\Auth\LoginController::class, '
 Route::post('/logout',      [App\Http\Controllers\Auth\LogoutController::class, 'logout']);
 
 Route::get('/files',         [App\Http\Controllers\FileController::class, 'index']);
+Route::post('/files',        [App\Http\Controllers\FileController::class, 'store']);
 Route::post('/files/signed', [App\Http\Controllers\FileController::class, 'signedURL']);

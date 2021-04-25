@@ -22,6 +22,15 @@ class FileController extends Controller
 
     }
 
+    public function store(Request $request)
+    {
+        //firstOrCreate= función para crear datos, si el dato ya existe en bd no lo vuelve a crear o duplicar. 
+        //firstOrCreate= (['verifica si existe', 'si no existe el dato se crea'])
+        $file = $request->user()->files()->firstOrCreate($request->only('path'), $request->only('name', 'size'));
+        return new FileResource($file);
+
+    }
+
     public function signedURL(Request $request)
     {
         $filename = md5($request->name . microtime()) . '.' . $request->extension;
@@ -41,4 +50,5 @@ class FileController extends Controller
             'additionalData' => $object->getFormInputs()
         ]);
     }
+    
 }
