@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/register',    [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+Route::post('/login',       [App\Http\Controllers\Auth\LoginController::class, 'login']);
+Route::post('/logout',      [App\Http\Controllers\Auth\LogoutController::class, 'logout']);
+
+Route::get('/files',         [App\Http\Controllers\FileController::class, 'index']);
+Route::post('/files',        [App\Http\Controllers\FileController::class, 'store']);
+Route::delete('/file/{file:uuid}',      [App\Http\Controllers\FileController::class, 'destroy']);
+Route::post('/files/signed', [App\Http\Controllers\FileController::class, 'signedURL']);
