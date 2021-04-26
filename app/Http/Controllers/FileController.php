@@ -31,6 +31,13 @@ class FileController extends Controller
 
     }
 
+    public function destroy(Request $request, File $file)
+    {
+        $this->authorize('destroy', $file);
+
+        $file->delete();
+    }
+
     public function signedURL(Request $request)
     {
         $filename = md5($request->name . microtime()) . '.' . $request->extension;

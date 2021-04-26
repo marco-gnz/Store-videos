@@ -24,4 +24,5 @@ Route::post('/logout',      [App\Http\Controllers\Auth\LogoutController::class, 
 
 Route::get('/files',         [App\Http\Controllers\FileController::class, 'index']);
 Route::post('/files',        [App\Http\Controllers\FileController::class, 'store']);
+Route::delete('/file/{file:uuid}',      [App\Http\Controllers\FileController::class, 'destroy']);
 Route::post('/files/signed', [App\Http\Controllers\FileController::class, 'signedURL']);
